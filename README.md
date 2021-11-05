@@ -33,9 +33,12 @@ use:
     
 readdata() which returns a list with 4 strings. These are 
 0: the number as shown on the main display of the BM869S
-1: the unit&mode belonging to the main display, e.g. "mVDC" or "OHM"
+1: the unit&mode belonging to the main display, e.g. "AC V" or "OHM"
 2: the number as shown on the secondary display (or blank if no secondary display is active)
 3: the unit&mode belonging to the secondary display, e.g. "HZ" (or blank)
 
 
 In addition you can run BM869S.py directly as a main program. It implements a small logger that reads data from the BM869S and saves it in a .CSV file which you can open with any spreadsheet program.  With no parameters, it creates a logfile called "BM869s_<date&time>.csv  with <date&time> being the current time and date and logs once per second. To stop use control-C. You can change the log-file name using the --out command line argument and the time using --time 
+
+
+Note: The BM869S meter must be turned-on for this to work. The software will hang if you turn the meter off (or if it turns itself off after being idle for too long!)
